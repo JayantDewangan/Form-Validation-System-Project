@@ -61,9 +61,15 @@ submit.click((e)=>{
     const phone = isValidPhone($("#phone").val());
     if (!phone) return showError("Phone number must be exactly 10 digits.");
 
-    const password = isValidPassword($("#password").val());
+    const pass = $("#password").val().trim();
+    const password = isValidPassword(pass);
     if (!password) {
         return showError("Password must be at least 8 characters and include uppercase, lowercase, a number, and a special character.");
+    }
+
+    const confirmPass = $("#confirmPassword").val().trim();
+    if(pass != confirmPass){
+        return showError("Passwords do not match!")
     }
 
 
@@ -90,6 +96,14 @@ submit.click((e)=>{
     $("#para2").html("FORM SUBMITTED SUCCESSFULLY!!");
 });
 
+// phone number more validation(restricting characters)
+$("#phone").on("input", function () {
+  // Remove non-digit characters and limit to 10 digits
+  this.value = this.value.replace(/\D/g, "").slice(0, 10);
+  // - \d = digit         - \D = NOT a digit
+
+});
+
 // show password functionality : 
 $("#togglePassword").change(function () {
     if ($(this).is(":checked")) {
@@ -98,3 +112,13 @@ $("#togglePassword").change(function () {
         $("#password").attr("type", "password"); // Hide password
     }
 });
+
+$("#toggleConfirm").change(function(){
+    if($(this).is(":checked")){
+        $("#confirmPassword").attr("type", "text");
+    }
+    else{
+        $("#confirmPassword").attr("type","password")
+    }
+})
+
