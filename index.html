@@ -25,13 +25,20 @@
                     <input type="email" id="email" placeholder="Email" required />
                 </div>
                 <div id="phone-div">
-                    <input type="text" id="phone" placeholder="Phone (10 digits)" required />
+                    <input type="text" id="phone" placeholder="Phone (10 digits)" maxlength="10" required />
                 </div>
                 <div id="password-div">
                     <input type="password" id="password" placeholder="Password" required />
                     <div id="show">
                         <input type="checkbox" id="togglePassword" />
                         <label for="togglePassword">Show Password</label>
+                    </div>
+                </div>
+                <div id="confirm-password-div">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+                    <div id="show">
+                        <input type="checkbox" id="toggleConfirm" />
+                        <label for="toggleConfirm">Show Password</label>
                     </div>
                 </div>
                 <div id="submit-div">
