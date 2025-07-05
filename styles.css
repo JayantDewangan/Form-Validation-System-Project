@@ -131,6 +131,26 @@ body{
     column-gap: 5px;
 }
 
+#confirm-password-div{
+    margin-top: -5px;
+    width: 350px;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#confirmPassword{
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid rgb(138, 138, 161);
+    width: 280px;
+    height: 35px;
+    font-family: "Oswald", sans-serif;
+}
+
 #show input,label{
     cursor: pointer;
 }
@@ -152,9 +172,3 @@ body{
     transform: scale(0.9);
     transition: 0.3s ease-in-out;
 }
-
-/* #errorMsg{
-    width: 200px;
-    height: 100px;
-    border: 1px solid red;
-} */
